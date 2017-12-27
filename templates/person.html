@@ -1,0 +1,18 @@
+<script type="text/html" id="person-list">
+    <h2>Participants</h2>
+    <p>Here are the participants:</p>
+    <ul class="person-list" data-bind="template: { name: 'person-item', foreach: people}"></ul>
+</script>
+
+<script type="text/html" id="person-item">
+    <li class="person-item">
+        <h3 class="person-name" data-bind="text: name"></h3>
+        <p class="person-text">Credits: <span data-bind="text: credits"></span></p>
+        <p class="person-text person-text--more">
+            more info
+        </p>
+    </li>
+</script>
+
+<script src="templates/person.js"></script>
+<link rel="stylesheet" href="templates/person.css">

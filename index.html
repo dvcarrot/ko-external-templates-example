@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="persons" data-bind="template: { name: 'person-list'}"></div>
+<div id="people" data-bind="template: { name: 'people-view'}"></div>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/knockout/dist/knockout.js"></script>
+<script src="scripts/initViewModel.js"></script>
+
+<script>
+    function MyViewModel() {
+        this.templateCollectionName = 'person';
+        this.people = [
+            {name: 'Ivan', credits: 125},
+            {name: 'Maria', credits: 3200},
+            {name: 'Franklin', credits: 250},
+            {name: 'Mario', credits: 5800}
+        ]
+    }
+    initViewModel(new MyViewModel(), 'persons');
+    initViewModel(new MyViewModel(), 'people', 'people');
+</script>
+
+</body>
+</html>
